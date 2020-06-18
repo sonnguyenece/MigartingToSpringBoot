@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1" cellspacing="">
+    <th:block th:each="customer,iter: ${customerList}">
+        <tr>
+            <td th:text="${iter.count}"></td>
+            <td><a th:href="@{/view-customer/{id}(id=${customer.id})}">
+            <span th:text="${customer.name}"></span></a></td>
+            <td th:text="${customer.phone}"></td>
+            <td th:text="${customer.province.name}"></td>
+            <td></td>
+        </tr>
+    </th:block>
+
+</table>
+
+
+</body>
+</html>
